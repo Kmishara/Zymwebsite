@@ -31,5 +31,5 @@ router.post('/login', authController.login);
 
 // Handle registration form submissions
 router.post('/register', authController.register);
-
+router.get("/logout", authController.logout);
 module.exports = router;

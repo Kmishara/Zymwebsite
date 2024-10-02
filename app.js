@@ -12,6 +12,7 @@ const  auth  = require("./src/utilis/Jwt");
 // Define the port number
 const PORT = process.env.PORT || 3000;
 const cookieParser = require("cookie-parser");
+const authenticateJWT = require("./src/middleware/Authenticate");
 //const authenticateJWT = require("./src/middleware/Authenticate");
 app.use(cookieParser());
 
@@ -46,6 +47,21 @@ app.get("/login", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "login.html"));
 });
 
+app.get('/logout', (req, res) => {
+  // For sessions, destroy session if used
+  if (req.session) {
+      req.session.destroy(err => {
+          if (err) {
+              return res.status(500).send("Could not log out.");
+          }
+          res.redirect('/login'); // Redirect after logging out
+      });
+  } else {
+      // If using JWT, no need to do anything on server side
+      // Just send a response back
+      res.json({ message: 'Logged out successfully' });
+  }
+});
 
 // Route for the registration page
 app.get("/register", (req, res) => {
@@ -65,7 +81,7 @@ app.post("/register", (req, res) => {
   // Handle registration logic here (e.g., save user data)
   res.send(`Registration attempt: ${username}`);
 });
-app.get("/profile", (req, res) => {
+app.get("/profile", authenticateJWT, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "profile.html"));
 });
 // Handle 404 errors (when the route is not found)
