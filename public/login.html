@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div id="main-login">
+      
+      <div id="main-login-form">
+        <h1>Login</h1>
+        <form action="/login" method="post" id="login-form"  >
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <br />
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+          <br />
+          <button onsubmit="handleLogin()" type="submit">Login</button>
+        </form>
+        <p>
+          Don't have an account? <a href="./register.html">Register here</a>
+        </p>
+      </div>
+      
+    </div>
+  
+     <script>
+      // Example of setting the isLoggedIn flag in local storage after login
+function handleLogin() {
+  // Assume login is successful
+  const authToken = "your_auth_token"; // This should come from your authentication logic
+
+  // Store the auth token (if needed)
+  localStorage.setItem("authToken", authToken);
+  
+  // Set the login flag
+  localStorage.setItem("isLoggedIn", "true");
+
+  // Redirect to home or the page where the user was
+  window.location.href = "./index.html"; // Adjust this to your home page
+}
+
+     </script>
+  </body>
+</html>
