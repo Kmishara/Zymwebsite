@@ -28,9 +28,9 @@ app.get("/", (req, res) => {
 });
 mongoose
   .connect("mongodb://127.0.0.1:27017/userss", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000, // Adjust the timeout period (in milliseconds)
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // serverSelectionTimeoutMS: 5000, // Adjust the timeout period (in milliseconds)
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
