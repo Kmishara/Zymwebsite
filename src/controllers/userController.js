@@ -15,7 +15,8 @@ exports.register = async (req, res) => {
       const  user = new User({
             username,
             email,
-            password
+            password,
+           
         });
 
         const salt = await bcrypt.genSalt(10);
@@ -60,10 +61,11 @@ exports.login = async (req, res) => {
             maxAge: 1 * 60 * 60 * 1000,  // 4 hours
             // secure: process.env.NODE_ENV === 'production',  // Use secure in production
         });
-
-        // Redirect to protected page
-       res.redirect("/profile.html"); 
-        // Redirect to /mind route
+       
+              return res.redirect('/abhi.html');
+        
+    
+        
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server error');
@@ -83,6 +85,12 @@ exports.mind = async(req,res)=>{
     
     // Your logic for handling /mind goes here
     res.sendFile(path.join(__dirname, '../public', 'mind.html'));
+}
+exports.Fatgain = async(req,res)=>{
+    res.redirect("/Fat")
+}
+exports.Fatloss = async(req,res)=>{
+    res.redirect("/Fat-loss")
 }
 exports.logout = (req, res) => {
     res.clearCookie('token')

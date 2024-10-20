@@ -84,6 +84,31 @@ app.post("/register", (req, res) => {
 app.get("/profile", authenticateJWT, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "profile.html"));
 });
+app.get("/abhi", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "abhi.html"));
+});
+app.get("/shoulder", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "shoulder.html"));
+});
+app.get("/back", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "back.html"));
+});
+app.get("/chest", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "chest.html"));
+});
+app.get("/biceps-triceps", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "biceps-triceps.html"));
+});
+app.get("/contact", authenticateJWT, (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "contact.html"));
+});
+// app.get("/gain",  (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "gain.html"));
+// });
+// app.get("/Fat-loss", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "Fat-loss.html"));
+// });
+
 // Handle 404 errors (when the route is not found)
 app.use((req, res) => {
   res.status(404).send("404: Page not found");

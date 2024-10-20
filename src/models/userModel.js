@@ -15,11 +15,8 @@ const userSchema = new mongoose.Schema({
         unique: true,
         
     },
-    password: {
-        type: String,
-        required: true,
-       
-    }
+    password: {type: String,required: true,},
+    
 });
 
 // Create and export the User model
