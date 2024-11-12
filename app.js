@@ -27,10 +27,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 mongoose
-  .connect("mongodb://127.0.0.1:27017/userss", {
+  .connect("mongodb+srv://pawarharsh191:harsh123@cluster0.bq00w.mongodb.net/users_clg", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 15000, // Adjust the timeout period (in milliseconds)
+     // Adjust the timeout period (in milliseconds)
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
