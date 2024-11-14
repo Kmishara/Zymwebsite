@@ -26,7 +26,7 @@ app.use("/", routes);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-mongoose.connect("mongodb://127.0.0.1:27017/users_clg", {
+mongoose.connect("mongodb+srv://Sweta_42:sweta_118@cluster0.nx1xk.mongodb.net//users_clg", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
      // Adjust the timeout period (in milliseconds)
