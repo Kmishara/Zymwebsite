@@ -105,3 +105,41 @@ span{
   color: #111;
   box-shadow: 0 0 1.6rem #45ffca;
 }
+
+
+/* Responsive design adjustments */
+
+
+@media screen and (max-width: 992px) {
+section{
+  padding: 10rem 3%;
+}
+.about-content h2{
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 5rem;
+}
+}
+
+@media screen and (max-width: 786px) {
+  .about{
+    flex-direction: column;
+  }
+.about-img img{
+  width: 70vw;
+  margin-top: 4rem;
+}
+.about-content{
+  text-align: center;
+}
+.about-content h2{
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 617px) {
+ .about-img img{
+  width: 70vw;
+  margin-top: 4rem;
+ }
+}

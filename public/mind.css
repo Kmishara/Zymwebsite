@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+  }
+  
+  :root {
+    --bg-color: #fff;
+    --snd-bg-color: #fff;
+    --text-color: #111;
+    --main-color: #45ffca;
+  }
+  
+  .services {
+    background: var(--snd-bg-color);
+    padding: 2rem;
+    
+  }
+  
+  .heading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 6.5rem;
+    margin-left: 10px;
+    color: var(--text-color);
+  }
+  
+  .heading span {
+    color: var(--main-color);
+  }
+  
+  .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+  }
+  
+  .row {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  .row img {
+    height: auto;
+    width: 100%;
+    border-radius: 27px;
+    margin-bottom: 1.4rem;
+  }
+  
+  .row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    color: var(--text-color);
+  }
+  
+  .row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+  }
+  
+  /* Responsive design adjustments */
+  @media screen and (max-width: 1200px) {
+    .heading {
+      font-size: 4.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    .heading {
+      font-size: 4rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .heading {
+      font-size: 3rem;
+    }
+  
+    .services-content {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+  
+    .row h4 {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .heading {
+      font-size: 2.5rem;
+    }
+  
+    .row h4 {
+      font-size: 18px;
+    }
+  }
+  

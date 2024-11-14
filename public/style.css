@@ -8,7 +8,7 @@ body {
   height: 100%;
   width: 100%;
 
-  color: white;
+  /* color: white; */
 }
 #main {
   height: 100%;
@@ -27,11 +27,18 @@ body {
 
   padding-left: 40px;
   padding-right: 60px;
+  /* position: fixed; */
   position: fixed;
+  top: 0;
+  /* width: 100%;
+ 
+  padding: 15px;
+  text-align: center; */
+  z-index: 1000;
 }
-.logo-navbar {
-  width: 60px;
-  height: 50px;
+.logo-navbar h2{
+  width: 600px;
+  height: 50px;color: #000;
 }
 .links {
   text-decoration: none;
@@ -62,6 +69,8 @@ a:focus {
   height: 100%;
   width: 100%;
   background-image: url(./Assets/media/image/banner.jpg);
+  z-index: 999;
+ 
   background-size: cover;
   background-position: center;
 }
