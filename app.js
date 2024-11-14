@@ -26,7 +26,7 @@ app.use("/", routes);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-mongoose.connect("mongodb+srv://Sweta_42:sweta_118@cluster0.nx1xk.mongodb.net//users_clg", {
+mongoose.connect("mongodb+srv://Sweta_42:sweta_118@cluster0.nx1xk.mongodb.net/users_clg", {
    
      // Adjust the timeout period (in milliseconds)
   })
