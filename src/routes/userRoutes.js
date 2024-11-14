@@ -34,6 +34,9 @@ router.get("/biceps-triceps", authenticateJWT, (req, res) => {
 router.get("/contact", authenticateJWT, (req, res) => {
   res.sendFile(path.join(__dirname, "../public", "contact.html"));
 });
+router.get("/about",  (req, res) => {
+  res.sendFile(path.join(__dirname, "../public", "about.html"));
+});
 // router.post("/mind",authController.mind)
 // Route for the registration page
 router.get('/register', (req, res) => {

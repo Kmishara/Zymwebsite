@@ -26,8 +26,7 @@ app.use("/", routes);
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-mongoose
-  .connect("mongodb+srv://pawarharsh191:harsh123@cluster0.bq00w.mongodb.net/users_clg", {
+mongoose.connect("mongodb://127.0.0.1:27017/users_clg", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
      // Adjust the timeout period (in milliseconds)
@@ -101,6 +100,9 @@ app.get("/biceps-triceps", authenticateJWT, (req, res) => {
 });
 app.get("/contact", authenticateJWT, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "contact.html"));
+});
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "about.html"));
 });
 // app.get("/gain",  (req, res) => {
 //   res.sendFile(path.join(__dirname, "public", "gain.html"));
